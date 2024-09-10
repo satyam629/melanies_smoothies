@@ -33,7 +33,6 @@ ingredients_list = st.multiselect("Choose up to 5 ingredients:",my_dataframe,max
 if ingredients_list:
 
     ingredients_string = " "
-    
     for fruit_chosen in ingredients_list:
         ingredients_string += fruit_chosen + ' '
 
@@ -45,7 +44,7 @@ if ingredients_list:
         fv_df = st.dataframe(data=fruityvice_response.json(), use_container_width=True)
 
 
-    # st.write(ingredients_string)
+    st.write(ingredients_string)
 
     my_insert_stmt = (
         """ insert into smoothies.public.orders(ingredients,name_on_order)
