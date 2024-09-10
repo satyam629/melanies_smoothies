@@ -45,10 +45,17 @@ if ingredients_list:
                 #formatted_fruit = fruit_chosen.lower()
                 #st.formatted_fruit
            
-                Search_result=st.SEARCH_ON
+                Search_result=st.search_on
+
+                
               
                 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + SEARCH_ON)
-                fv_df = st.dataframe(data=fruityvice_response.json(), use_container_width=True)  
+if fruityvice_response.status_code == 200:
+                fv_data = fruityvice_response.json()
+                fv_df = pd.DataFrame([fv_data])  # Wrap the JSON in a list to convert to DataFrame
+                st.dataframe(data=fv_df, use_container_width=True)
+else:
+                st.error(f"Could not fetch data for {search_on}. Please try again later.") 
               
 
 
