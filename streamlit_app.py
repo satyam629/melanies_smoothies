@@ -47,7 +47,7 @@ if ingredients_list:
            
                 Search_result=st.SEARCH_ON
               
-                fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + Search_result)
+                fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + SEARCH_ON)
                 fv_df = st.dataframe(data=fruityvice_response.json(), use_container_width=True)  
               
 
