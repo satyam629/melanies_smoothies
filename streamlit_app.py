@@ -37,6 +37,7 @@ if ingredients_list:
         ingredients_string += fruit_chosen + ' '
 
         search_on = pd_df.loc[pd_df['FRUIT_NAME'] == fruit_chosen, 'SEARCH_ON'].iloc[0]
+        search_value = search_on if pd.notna(search_on) else fruit_chosen
         st.write('The search value for ', fruit_chosen,'is',search_on, '.')
         
         st.subheader(fruit_chosen + ' Nutrition Information')
