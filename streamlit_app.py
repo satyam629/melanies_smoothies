@@ -3,7 +3,6 @@ import pandas as pd
 import streamlit as st
 import requests
 
-
 # Write directly to the app
 st.title(":cup_with_straw: Customize your Smoothie! :cup_with_straw:")
 st.write(
