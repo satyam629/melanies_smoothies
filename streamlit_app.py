@@ -57,8 +57,8 @@ if ingredients_list:
     #st.stop()
     time_to_insert = st.button("Submit Order")
          #try:
-            # Execute the SQL insert query
-            #session.sql(my_insert_stmt).collect()
+           Execute the SQL insert query
+           session.sql(my_insert_stmt).collect()
 
 
     if time_to_insert:
